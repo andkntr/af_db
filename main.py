@@ -11,7 +11,7 @@ scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/aut
 #json = '/content/afdb2023-dee7ec1a7c0d.json'
 
 #credentials = ServiceAccountCredentials.from_json_keyfile_name(json, scope)
-credentials = service_account.Credentials.from_service_account_info( st.secrets["gcp_service_account"], scopes=[ "https://www.googleapis.com/auth/spreadsheets", ],
+credentials = Service_AccountCredentials.from_service_account_info( st.secrets["gcp_service_account"], scopes=[ "https://www.googleapis.com/auth/spreadsheets", ],
 )
 
 gc = gspread.authorize(credentials)
