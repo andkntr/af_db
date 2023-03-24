@@ -2,22 +2,22 @@ import streamlit as st
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from google.oauth2.service_account import Credentials
+from google.oauth2 import service_account
 
 
-
-scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
 #ダウンロードしたjsonファイルをドライブにアップデートした際のパス
 #json = '/content/afdb2023-dee7ec1a7c0d.json'
 
 #credentials = ServiceAccountCredentials.from_json_keyfile_name(json, scope)
 #credentials = ServiceAccountCredentials.from_service_account_info( st.secrets["gcp_service_account"], scopes=[ "https://www.googleapis.com/auth/spreadsheets", ],)
-creds_json = st.secrets["gcp_service_account"]
-creds = Credentials.from_service_account_info(info=creds_json)
 
-
+# スプレッドシートの認証
+scopes = [ 'https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive'
+]
+credentials = service_account.Credentials.from_service_account_info( st.secrets["gcp_service_account"], scopes=[ "https://www.googleapis.com/auth/spreadsheets", ],)
 gc = gspread.authorize(credentials)
+
 
 #書き込み先のスプレッドシートキーを追加
 SPREADSHEET_KEY = '1T3K4khm4CQ3JcWOKO1NtJFie37WEDxDWJ7SiIOlSKTk'
