@@ -33,11 +33,11 @@ df = pd.DataFrame(list_of_lists[1:], columns=list_of_lists[0])
 
 # ここからUI
 st.set_page_config(
-    page_title="マネートラックアフィリエイターリスト（β版）", 
+    page_title="マネートラックアフィリエイターリスト", 
     layout="wide")
 
 
-st.subheader('マネートラックアフィリエイターリスト')
+st.subheader('マネートラックアフィリエイターリスト（β版）')
 
 # Streamlitで検索キーワードを入力
 search_term = st.text_input('検索キーワードを入力してください', '')
