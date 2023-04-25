@@ -33,7 +33,7 @@ df = pd.DataFrame(list_of_lists[1:], columns=list_of_lists[0])
 
 # ここからUI
 st.set_page_config(
-    page_title="マネートラックアフィリエイターリスト", 
+    page_title="マネートラックアフィリエイターリスト（β版）", 
     layout="wide")
 
 
